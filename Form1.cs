@@ -65,10 +65,10 @@ namespace Assignment11_2
             var id = bookGrid.CurrentRow.Cells[0].Value;
             int isbn = Convert.ToInt32(id);
             var bookToUpdate = bookRepository.FindBook(isbn);
-            txtAuthor.Text = bookToUpdate.Title.ToString();
+            txtAuthor.Text = bookToUpdate.Author_Name.ToString();
             txtDesc.Text = bookToUpdate.Description.ToString();
             txtISBN.Text = bookToUpdate.ISBN.ToString();
-            txtDesc.Text = bookToUpdate.Description.ToString();
+            txtTitle.Text = bookToUpdate.Title.ToString();
             btnUpdate.Enabled = true;
         }
 
@@ -76,7 +76,7 @@ namespace Assignment11_2
         {
             var id = int.Parse(txtISBN.Text);
             var bookToUpdate = bookRepository.FindBook(id);
-            bookToUpdate.Title = txtAuthor.Text;
+            bookToUpdate.Title = txtTitle.Text;
             bookToUpdate.Description = txtDesc.Text;
             bookToUpdate.Author_Name = txtAuthor.Text;
             bookToUpdate.ISBN = int.Parse(txtISBN.Text);
