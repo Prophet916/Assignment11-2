@@ -63,7 +63,8 @@ namespace Assignment11_2
         private void btnSelect_Click(object sender, EventArgs e)
         {
             var id = bookGrid.CurrentRow.Cells[0].Value;
-            var bookToUpdate = bookRepository.FindBook((int)id);
+            int isbn = Convert.ToInt32(id);
+            var bookToUpdate = bookRepository.FindBook(isbn);
             txtAuthor.Text = bookToUpdate.Title.ToString();
             txtDesc.Text = bookToUpdate.Description.ToString();
             txtISBN.Text = bookToUpdate.ISBN.ToString();
